@@ -28,9 +28,9 @@ class AvgData():
         lat = self.get_lat_long()[0]
         lng = self.get_lat_long()[1]
         wu_data = ScrapWu(self.get_lat_long()[0], self.get_lat_long()[
-                          1], self.offset, wu_key).get_temperature()
+                          1], self.offset, self.wu_key).get_temperature()
         io_data = ScrapIO(self.get_lat_long()[0], self.get_lat_long()[
-                          1], self.offset, io_key).get_avg_temperature()
+                          1], self.offset, self.io_key).get_avg_temperature()
         avg_temperature = int(wu_data + io_data) / 2
         return avg_temperature
 
