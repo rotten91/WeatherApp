@@ -2,7 +2,6 @@ from app.scrap.wunderground import *
 from app.scrap.io import *
 from geopy import Nominatim
 
-
 wu_key = '8aa4b38d78a0c7b3'
 io_key = '15f0dcbd752adbe5bc417321d6d8f3dd'
 
@@ -45,7 +44,16 @@ class AvgData():
                           , self.offset, io_key).get_time()
         return io_data
 
-
-q = AvgData("Szczecin", wu_key, '1', 0 )
-w = AvgData("Szczecin", wu_key, '1', 0 )
-print(w.time())
+#     def to_file(self):
+#         avg_temp = self.temperature()
+#         avg_wind = self.wind()
+#         curr_time = self.time()
+#         dir_path = os.path.join('datafiles')
+#         path = os.path.dirname(os.path.abspath(__file__))
+#         full_path = os.path.join(path, dir_path, str(self.city_name))
+#         with open(full_path, 'w') as f:
+#
+#
+# q = AvgData("Szczecin", wu_key, '1', 0 )
+# w = AvgData("Szczecin", wu_key, '1', 0 )
+# print(w.time())
