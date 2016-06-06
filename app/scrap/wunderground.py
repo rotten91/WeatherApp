@@ -4,8 +4,8 @@ import codecs
 import json
 import contextlib
 
-#lat = '52.370235'
-#lng = '4.903549'
+lat = '52.370235'
+lng = '4.903549'
 
 
 class ScrapWu():
@@ -25,7 +25,8 @@ class ScrapWu():
     def get_json(self):
         url = 'http://api.wunderground.com/api/{0}/geolookup/history_{1}/q/{2},{3}.json'\
             .format(self.api_key, self.get_time(), self.latitude, self.longitude)
-        print(url)
+        #dummy print
+        #print(url)
         with contextlib.closing(request.urlopen(url)) as u:
             json_data = request.urlopen(url)
             reader = codecs.getreader('utf-8')

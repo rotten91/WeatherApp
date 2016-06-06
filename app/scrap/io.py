@@ -1,6 +1,7 @@
 from datetime import timedelta, datetime
 import forecastio
 
+
 lat = '52.370235'
 lng = '4.903549'
 
@@ -18,7 +19,8 @@ class ScrapIO():
         return date
 
     def scrap_io(self):
-        forecast = fore.load_forecast(self.api_key, self.latitude, self.longitude,
+        from forecastio import load_forecast
+        forecast = load_forecast(self.api_key, self.latitude, self.longitude,
                                  time=self.get_time(), units='si')
         return forecast
 
@@ -41,8 +43,7 @@ class ScrapIO():
             avg_daily_wind = i.windSpeed
         return avg_daily_wind
 
-q = ScrapIO(lat, lng, 0, '15f0dcbd752adbe5bc417321d6d8f3dd')
-print(q.get_time())
-print(q.get_avg_daily())
-print(q.get_avg_temperature())
-print(q.get_avg_wind())
+# q = ScrapIO(lat, lng, 0, '15f0dcbd752adbe5bc417321d6d8f3dd')
+# print(q.get_time())
+# print(q.get_avg_temperature())
+# print(q.get_avg_wind())
