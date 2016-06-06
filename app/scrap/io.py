@@ -2,10 +2,6 @@ from datetime import timedelta, datetime
 import forecastio
 
 
-lat = '52.370235'
-lng = '4.903549'
-
-
 class ScrapIO():
 
     def __init__(self, lat, long, offset, api_key):
@@ -15,7 +11,8 @@ class ScrapIO():
         self.api_key = api_key
 
     def get_time(self):
-        date = datetime.now() - timedelta(days=self.offset) + timedelta(hours=0)
+        date = datetime.now() - timedelta(days=self.offset) \
+               + timedelta(hours=0)
         return date
 
     def scrap_io(self):

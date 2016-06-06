@@ -4,10 +4,12 @@ import contextlib
 
 
 class Main():
+
     def __init__(self):
         self.wu_key = '8aa4b38d78a0c7b3'
         self.io_key = '15f0dcbd752adbe5bc417321d6d8f3dd'
-    def welcome (self):
+
+    def welcome(self):
         with contextlib.closing(open('welcome.txt', 'r')) as f:
             print(f.read())
 
@@ -21,7 +23,8 @@ class Main():
                 print("Wpisz nazwe miasta : \n")
                 try:
                     city = str(input(">>>"))
-                    DataDriver(wu_apikey=self.wu_key, io_apikey=self.io_key,city=city).fetch_data()
+                    DataDriver(wu_apikey=self.wu_key,
+                               io_apikey=self.io_key, city=city).fetch_data()
                     start.menu()
                 except AttributeError:
                     sys.stderr.write("Nie ma takiego miasta \n")
@@ -29,7 +32,8 @@ class Main():
                 print("Wpisz nazwe wybranego miasta : \n")
                 try:
                     city = str(input(">>>"))
-                    DataDriver(wu_apikey=self.wu_key, io_apikey=self.io_key, city=city).print_file()
+                    DataDriver(wu_apikey=self.wu_key,
+                               io_apikey=self.io_key, city=city).print_file()
                     start.menu()
                 except AttributeError:
                     sys.stderr.write("Nie ma podanego miasta w bazie\n")
