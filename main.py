@@ -44,7 +44,7 @@ class Main():
                 elif choice == 3:
                     break
         except UnboundLocalError:
-            sys.stderr.write("Uzywamy cyferek! :)\n")
+            sys.stderr.write("Uzywamy cyfr 1-3! :)\n")
             start.menu()
 if __name__ == '__main__':
     start = Main()

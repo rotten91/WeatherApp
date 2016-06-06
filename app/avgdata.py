@@ -3,10 +3,6 @@ from app.scrap.io import *
 from geopy import Nominatim
 
 
-#wu_key = '8aa4b38d78a0c7b3'
-#io_key = '15f0dcbd752adbe5bc417321d6d8f3dd'
-
-
 class AvgData():
     """Class for calculating average data, wu_key and io_key
     , are for api keys for forecastio and wunderground"""
